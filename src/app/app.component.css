@@ -1,39 +1,39 @@
 .xOTB-main-div{
   width: 100%;
-  border: 1px solid blue;
+  border: 1px solid lightgrey;
   display: flex;
 }
 .xOTB-nav-div{
   width: 20%;
-  border-right: 1px solid blue;
+  border-right: 1px solid lightgrey;
   text-align: center;
 }
 .xOTB-actions-div{
   margin: 20px;
-  border: 1px solid blue;
+  border: 1px solid lightgrey;
   width: 80%;
 }
 .xOTB-actions-nav-div{
 width: 100%;
-background-color: blue;
+background-color: lightgrey;
 display:flex;
 }
 .xOTB-actions-btn-div{
   width: 21%;
   margin: 2%;
-  background-color: lightgray;
+  background-color: #b5afaf;
   margin-top: 10px;
   margin-bottom: 10px;
   height: 30px;
   text-align: center;
   padding-top: 10px;
   cursor: pointer;
-  border:2px solid lightgray;
+  border:2px solid #b5afaf;
 }
 
 .xOTB-actions-btn-click-div{
-  border:2px solid red;
-  background-color: white;
+  border:2px solid gray;
+  background-color: gray;
 }
 .xOTB-actions-btn-content-div{
   text-align: center;
@@ -72,7 +72,7 @@ display:flex;
 }
 .xOTB-button-div-selected
 {
-  background-color: lightblue;
+  background-color: grey;
   color:white;
 }
 

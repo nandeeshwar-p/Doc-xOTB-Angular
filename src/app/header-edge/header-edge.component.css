@@ -1,6 +1,6 @@
 .xOTB-header{
   width:100%;
-  border:1px solid blue;
+  border:1px solid lightgray;
   display: flex;
   height:67px;
 }
@@ -8,7 +8,7 @@
  width: 50px;
  height: 50px;
  border-radius: 50px;
- background-color:blue;
+ background-color:lightgray;
  margin-top: 10px;
 }
 .xOTB-text{
