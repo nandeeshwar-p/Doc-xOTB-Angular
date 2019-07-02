@@ -1,0 +1,124 @@
+.xOTB-main-div{
+  width: 100%;
+  border: 1px solid blue;
+  display: flex;
+}
+.xOTB-nav-div{
+  width: 20%;
+  border-right: 1px solid blue;
+  text-align: center;
+}
+.xOTB-actions-div{
+  margin: 20px;
+  border: 1px solid blue;
+  width: 80%;
+}
+.xOTB-actions-nav-div{
+width: 100%;
+background-color: blue;
+display:flex;
+}
+.xOTB-actions-btn-div{
+  width: 21%;
+  margin: 2%;
+  background-color: lightgray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+  border:2px solid lightgray;
+}
+
+.xOTB-actions-btn-click-div{
+  border:2px solid red;
+  background-color: white;
+}
+.xOTB-actions-btn-content-div{
+  text-align: center;
+  /* color: darkgrey; */
+  /* overflow-y: scroll; */
+  position: relative;
+  height: 85%;
+}
+
+.xOTB-first-div{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.04);
+  padding:0px;
+  top:0px;
+  left:0px;
+}
+.xOTB-second-div{
+  width: 40px;
+  height:40px;
+  background-color: #b4a8a8;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.xOTB-third-div{
+  width: 200px;
+  height: 100%;
+  background-color: rgb(228, 171, 171);
+  cursor: pointer;
+}
+.xOTB-button-div{
+  height: 33px;
+  text-align: center;
+  border: solid grey;
+  padding-top: 10px;
+  cursor: pointer;
+}
+.xOTB-button-div-selected
+{
+  background-color: lightblue;
+  color:white;
+}
+
+.xOTB-margin
+{
+  margin:90px;
+}
+
+.xotb-demo
+{
+  margin: 10px;
+}
+
+.xotb-disabledDiv {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.xOTB-doc-margin{
+  margin:10px;
+}
+:host /deep/ .mainSelectorStyle{
+  background-color: aquamarine;
+}
+:host /deep/ .mainOptionStyle{
+  background-color: aqua;
+}
+:host /deep/ .subSelectorStyle{
+  background-color: coral;
+  color:white;
+}
+:host /deep/ .subOptionStyle{
+  background-color: rgb(139, 45, 10);
+  color:white;
+}
+:host /deep/ .containerStyle{
+  max-width: fit-content;
+  border:1px black solid;
+  border-radius: 5pt;
+  overflow: hidden;
+}
+:host /deep/ .headerStyle{
+  border-bottom:1px black solid;
+  background: dimgray;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+

@@ -1,0 +1,86 @@
+<div style="margin: inherit;">
+  <h3>Description</h3>
+  <div class="blackbody text-line">{{description}} </div>
+
+  <h3>Import</h3>
+  <div class="blackbody text-line">{{moduleImport}} </div>
+  
+  <h3>Example Code</h3>
+  <div class="blackbody text-line">{{example}}
+  </div>
+
+  <h3>Input Parameters</h3>
+
+  <mat-table #table [dataSource]="input_dataSource">
+
+      <ng-container matColumnDef="Attribute">
+        <mat-header-cell *matHeaderCellDef> Attribute </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.attribute}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="DataType">
+        <mat-header-cell *matHeaderCellDef> DataType </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.datatype}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Default">
+        <mat-header-cell *matHeaderCellDef> Default </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.default}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="inputDisplayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: inputDisplayedColumns;"></mat-row>
+    </mat-table>
+
+
+    <h3>Output Parameters</h3>
+
+    <mat-table #table [dataSource]="output_dataSource">
+
+        <ng-container matColumnDef="MethodName">
+          <mat-header-cell *matHeaderCellDef> Method Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.methodName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="EventType">
+          <mat-header-cell *matHeaderCellDef> Event Type </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.eventType}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="outputDisplayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: outputDisplayedColumns;"></mat-row>
+      </mat-table>
+<div fxLayout="column" fxLayoutGap="20px">
+  <mat-expansion-panel class="xoTB-panel">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h4>formJson Data Default Example</h4>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="blackbody text-line">{{form_json}}
+      </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel class="xoTB-panel">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h4>customFormJson Data Attribute Example</h4>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="blackbody text-line">{{custom_form_json}}
+      </div>
+  </mat-expansion-panel>
+</div>
+
+
+</div>
