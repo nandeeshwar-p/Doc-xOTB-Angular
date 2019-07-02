@@ -1,5 +1,6 @@
-# xOTB-Angular-Doc
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+# Doc-xOTB-Angular-Doc
+This is an application to showcase/demo the components that are part of the "edge-xotb-ng" library.
+https://github.com/ERS-HCL/xOTB-Angular
 
 ## Development server
 
