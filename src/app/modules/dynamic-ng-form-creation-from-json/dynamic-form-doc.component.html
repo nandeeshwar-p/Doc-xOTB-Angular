@@ -1,14 +1,16 @@
 <div style="margin: inherit;">
+    <h3>Form Creation</h3>
+    <hr>
   <h3>Description</h3>
   <div class="blackbody text-line">{{description}} </div>
-
+  <hr>
   <h3>Import</h3>
   <div class="blackbody text-line">{{moduleImport}} </div>
-  
+  <hr>
   <h3>Example Code</h3>
   <div class="blackbody text-line">{{example}}
   </div>
-
+  <hr>
   <h3>Input Parameters</h3>
 
   <mat-table #table [dataSource]="input_dataSource">
@@ -36,7 +38,7 @@
       <mat-header-row *matHeaderRowDef="inputDisplayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: inputDisplayedColumns;"></mat-row>
     </mat-table>
-
+    <hr>
 
     <h3>Output Parameters</h3>
 
@@ -60,11 +62,12 @@
         <mat-header-row *matHeaderRowDef="outputDisplayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: outputDisplayedColumns;"></mat-row>
       </mat-table>
+      <hr>
 <div fxLayout="column" fxLayoutGap="20px">
   <mat-expansion-panel class="xoTB-panel">
     <mat-expansion-panel-header>
         <mat-panel-title>
-          <h4>formJson Data Default Example</h4>
+          <h6 class="h6-accor">formJson Data Default Example</h6>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <div class="blackbody text-line">{{form_json}}
@@ -74,7 +77,7 @@
   <mat-expansion-panel class="xoTB-panel">
     <mat-expansion-panel-header>
         <mat-panel-title>
-          <h4>customFormJson Data Attribute Example</h4>
+            <h6 class="h6-accor">customFormJson Data Attribute Example</h6>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <div class="blackbody text-line">{{custom_form_json}}

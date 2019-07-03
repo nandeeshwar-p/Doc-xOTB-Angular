@@ -29,3 +29,43 @@ font-size: 20px;font-weight: 700;text-align: left;margin-left: 10px;
 .table td, .table th {
     padding: .75rem;
 }
+
+ .mat-header-cell {
+    color: #FFFFFF !important;
+    background-color: #627C9D;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .cdk-column-MethodName , .cdk-column-Attribute {
+    color:#0000cc;
+    cursor: pointer;
+  }
+
+  .cdk-column-MethodName:hover ,.cdk-column-Attribute:hover {
+   text-decoration: underline;
+  }
+ 
+  h3{
+    background-color: #BDC7D1;
+    height: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: 400;
+  }
+
+  h6 {
+    text-align: start;
+    margin: 0px;
+    padding:0px;
+    color:#0000cc;
+    cursor: pointer;
+    font-size: 16px;
+    padding-left:10px;
+  } 
+  h6:hover{
+      text-decoration: underline;
+  }
+
+  body{
+    font-family: auto !important;
+  }

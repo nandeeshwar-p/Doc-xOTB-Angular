@@ -7,6 +7,7 @@
   width: 20%;
   border-right: 1px solid lightgrey;
   text-align: center;
+  min-height: 500px;
 }
 .xOTB-actions-div{
   margin: 20px;
@@ -21,19 +22,22 @@ display:flex;
 .xOTB-actions-btn-div{
   width: 21%;
   margin: 2%;
-  background-color: #b5afaf;
+  background-color: #BDC7D1;
   margin-top: 10px;
   margin-bottom: 10px;
   height: 30px;
   text-align: center;
   padding-top: 10px;
   cursor: pointer;
-  border:2px solid #b5afaf;
+  border:2px solid #BDC7D1;
+  color:black;
+  font-weight: normal;
+  text-decoration: none;
 }
 
 .xOTB-actions-btn-click-div{
-  border:2px solid gray;
-  background-color: gray;
+ text-decoration: underline;
+  /* font-weight: bold; */
 }
 .xOTB-actions-btn-content-div{
   text-align: center;
@@ -121,4 +125,15 @@ display:flex;
   text-align: center;
   margin-bottom: 10px;
 }
+
+.comp-h6{
+  padding-top:20px;
+  padding-bottom: 10px;
+  color: black;
+}
+
+body{
+  font-family: auto !important;
+}
+
 

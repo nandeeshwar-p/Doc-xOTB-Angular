@@ -19,5 +19,10 @@ h3 {
 }
 
 .xoTB-panel{
-  background: darkgray;
+  background: #BDC7D1;
+}
+
+.h6-accor{
+  color: black;
+    font-size: 13px;
 }

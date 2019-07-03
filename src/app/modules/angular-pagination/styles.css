@@ -6,7 +6,7 @@ body {
     color: #333;
     background-color: #f0f0f0 !important;
 }
-.xOTB-h1, .xOTB-h2, .xOTB-h3, .xOTB-h4, .xOTB-h5, .xOTB-h6, h1, h2, h3, h4, h5, h6 {
+.xOTB-h1, .xOTB-h2, .xOTB-h3, .xOTB-h4, .xOTB-h5, .xOTB-h6, h1, h2, h3, h4, h5 {
     font-family: inherit;
     font-weight: 500;
     line-height: 1.1;
