@@ -120,6 +120,7 @@ export class AppComponent {
         }
       }
     }
+    this.onSelectTab('multiSelvalue');
   }
 
   onActionButtonClick(buttonName) {

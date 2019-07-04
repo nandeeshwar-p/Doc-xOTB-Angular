@@ -31,7 +31,7 @@ export class AccordionDocComponent implements OnInit {
   ngOnInit() {
 
     this.description = `
-    Accordion Component
+    Accordion helps to display the content, on user action. This Accordion component is a material based components, which can be customised to fit the developer need.
     `;
 
     this.moduleImport = `

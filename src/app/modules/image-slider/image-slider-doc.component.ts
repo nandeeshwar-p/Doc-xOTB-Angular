@@ -17,16 +17,16 @@ export class ImageSliderDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "imagesData", datatype: 'Object', default: "undefined", description: 'It will take the jsonObject file for image slide creation'},
-    {attribute: "arrowColor", datatype: 'string', default: "#912525", description: 'It will set the arrow (left and right) colors'},
-    {attribute: "texColor", datatype: 'string', default: "#f2f2f2", description: 'It will set text color for caption and image number'},
-    {attribute: "arrowBgColor", datatype: 'string', default: "white", description: 'It will set the arrow (left and right) background colors'},
-    {attribute: "bottomButtonColor", datatype: 'string', default: "#bbb", description: 'It will set the below button default colors'},
-    {attribute: "bottomButtonSelectedColor", datatype: 'string', default: "#717171", description: 'It will set the below button selected colors'},
+    {attribute: "imagesData", datatype: 'Object', default: "undefined", description: 'json file for image slide creation'},
+    {attribute: "arrowColor", datatype: 'string', default: "#912525", description: 'customize arrow (left and right) colors'},
+    {attribute: "texColor", datatype: 'string', default: "#f2f2f2", description: 'customize text color for caption and image number'},
+    {attribute: "arrowBgColor", datatype: 'string', default: "white", description: 'customize the arrow (left and right) background colors'},
+    {attribute: "bottomButtonColor", datatype: 'string', default: "#bbb", description: 'customize the below button default colors'},
+    {attribute: "bottomButtonSelectedColor", datatype: 'string', default: "#717171", description: 'customize the below button selected colors'},
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "currentImage", eventType: 'object', description: 'It will give you the current image object, it will trigger when we click the arrow buttons and below buttons'},
+    {methodName: "currentImage", eventType: 'object', description: 'returns current image object. Triggered when we click the arrow buttons and below buttons'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -39,7 +39,7 @@ export class ImageSliderDocComponent implements OnInit {
   ngOnInit() {
 
     this.description = `
-    Image Slider Component
+    This is a carousel kind og image display components. The Components can be customised based ion the developer needs.
     `;
 
     this.moduleImport = `

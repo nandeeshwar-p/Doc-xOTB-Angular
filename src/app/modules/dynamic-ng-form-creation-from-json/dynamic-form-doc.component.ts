@@ -17,11 +17,11 @@ export class DynamicFormDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "jsonFormData", datatype: 'Object', default: "undefined", description: 'It will take the jsonObject file for form Creation'},
+    {attribute: "jsonFormData", datatype: 'Object', default: "undefined", description: 'json object with element names and properties'},
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "btnEvent", eventType: 'object', description: 'It will give you the button name , value and updated jsonFrom Data'},
+    {methodName: "btnEvent", eventType: 'object', description: 'returns button name , value and updated jsonFrom Data'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -34,7 +34,7 @@ export class DynamicFormDocComponent implements OnInit {
   ngOnInit() {
 
     this.description = `
-    Material Custom Form Creation
+    Form elements are created based on data passed in JSON file. Creates and customizes form elements based on the names passed in JSON object.
     `;
 
     this.moduleImport = `

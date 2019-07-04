@@ -15,11 +15,11 @@ export class AngularDynamicDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "btnColor", datatype: 'String', default: "#00ceff", description: 'It will change the button Color'},
+    {attribute: "btnColor", datatype: 'String', default: "#00ceff", description: 'Change the button Color'},
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "formValue", eventType: 'object', description: 'It will give you the updated Data,it will trigger whenever input change and button click'},
+    {methodName: "formValue", eventType: 'object', description: 'return the updated Data,triggered on input change and button click'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -32,7 +32,7 @@ export class AngularDynamicDocComponent implements OnInit {
   ngOnInit() {
 
     this.description = `
-    Angular Dynamic Form
+    Dynamic form generator, based on user action. Forms can be genreated till multiple levels, based on user actions.
     `;
 
     this.moduleImport = `

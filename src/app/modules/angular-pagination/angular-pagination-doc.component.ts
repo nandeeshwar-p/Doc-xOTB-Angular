@@ -16,15 +16,15 @@ export class PaginationDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "items", datatype: 'object', default: "", description: 'It will provide the total no of items.'},
-    {attribute: "pageSize", datatype: 'Number', default: "10", description: 'It will change page size.'},
-    {attribute: "maxPages", datatype: 'Number', default: "8", description: 'Here we can change the number of page to be displayed.'},
-    {attribute: "setFontColor", datatype: 'String', default: "#337ab", description: 'It will set the font color.'},
+    {attribute: "items", datatype: 'object', default: "", description: 'Provides the total no of items.'},
+    {attribute: "pageSize", datatype: 'Number', default: "10", description: 'Change page size.'},
+    {attribute: "maxPages", datatype: 'Number', default: "8", description: 'Change the number of page to be displayed.'},
+    {attribute: "setFontColor", datatype: 'String', default: "#337ab", description: 'Set the font color.'},
     
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "changePage", eventType: 'event', description: 'Here we recieved the callback function when we change the selected page.'},
+    {methodName: "changePage", eventType: 'event', description: 'Triggered on page change'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);

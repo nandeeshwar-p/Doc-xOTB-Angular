@@ -31,7 +31,7 @@ export class ModalWindowDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "modalOptions", datatype: 'IModalOptions', default: "Undefined", description: 'It will set the modal content,title and give the flag nexmodel required or not.'},
+    {attribute: "modalOptions", datatype: 'IModalOptions', default: "Undefined", description: 'Pass modal window title, content, css classes as JSON object'},
   ];
 
   private output_element_data: IoutputElement[] = [
@@ -47,7 +47,7 @@ export class ModalWindowDocComponent implements OnInit {
   ngOnInit() {
 
     this.description = `
-    Model window Component
+    Modal(Pop-up) window to display the content, as and when required. It can display modal windows till three levels. Provides options to customize the look and feel. 
     `;
     this.moduleImport = `
       import { ModalWindow } from 'edge-xotb-ng';

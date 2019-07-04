@@ -31,10 +31,10 @@ font-size: 20px;font-weight: 700;text-align: left;margin-left: 10px;
 }
 
  .mat-header-cell {
-    color: #FFFFFF !important;
-    background-color: #627C9D;
-    font-size: 16px;
-    font-weight: bold;
+    color: black !important;
+    background-color: rgb(200, 217, 226);
+    font-size: 14px;
+    font-weight: 400;
   }
   .cdk-column-MethodName , .cdk-column-Attribute {
     color:#0000cc;
@@ -42,16 +42,23 @@ font-size: 20px;font-weight: 700;text-align: left;margin-left: 10px;
   }
 
   .cdk-column-MethodName:hover ,.cdk-column-Attribute:hover {
-   text-decoration: underline;
+   text-decoration: none;
   }
  
   h3{
-    background-color: #BDC7D1;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+
+  .h3-comp{
+    background-color: rgb(200, 217, 226);
     height: 30px;
     padding-top: 10px;
     padding-left: 10px;
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 1.1em;
   }
+
 
   h6 {
     text-align: start;
@@ -59,8 +66,9 @@ font-size: 20px;font-weight: 700;text-align: left;margin-left: 10px;
     padding:0px;
     color:#0000cc;
     cursor: pointer;
-    font-size: 16px;
-    padding-left:10px;
+    font-size: 14px;
+    padding-left: 10px;
+    font-weight: 400;
   } 
   h6:hover{
       text-decoration: underline;
@@ -69,3 +77,80 @@ font-size: 20px;font-weight: 700;text-align: left;margin-left: 10px;
   body{
     font-family: auto !important;
   }
+  .mat-expansion-panel-header,
+  .mat-expansion-panel-header:hover, 
+  .mat-expansion-panel-header-description, 
+  .mat-expansion-panel-header-title,
+  .mat-expansion-panel-header-description:hover, 
+  .mat-expansion-panel-header-title:hover,
+  .mat-expansion-panel-header.mat-expanded:focus,
+  .mat-expansion-panel-header.mat-expanded:hover {
+    background-color: rgb(200, 217, 226);;
+  }
+  .mat-expansion-panel-content,
+  .mat-expansion-panel-header.mat-expanded,
+  .mat-expansion-panel-content:hover{
+    background-color: rgb(200, 217, 226);
+  }
+  .mat-expansion-panel,
+  .mat-expansion-panel.mat-expanded:focus
+  .mat-expansion-panel.mat-expanded:hover
+  .mat-expansion-panel:hover{
+    background-color: rgb(200, 217, 226);
+  }
+  .mat-expansion-panel:hover,
+  .mat-expansion-panel-header.mat-expanded:focus, 
+  .mat-expansion-panel-header.mat-expanded:hover{
+    background-color: rgb(200, 217, 226) !important;
+  }
+.xOTB-modal-header {
+    max-height: 10vh!important;
+    background-color: rgb(200, 217, 226) !important;
+    color: black !important;
+    padding: 2%;
+}
+.xOTB-modal-footer{
+  max-height: 10vh!important;
+  background-color: rgb(200, 217, 226) !important;
+  color: black !important;
+  padding: 2%;
+}
+.xOTB-close{
+  color: black !important;
+}
+
+.xOTB-speedometerReading{
+  border: 20px solid rgb(200, 217, 226) !important;
+  border-color: transparent transparent rgb(200, 217, 226) rgb(200, 217, 226) !important;
+}
+input[type=text]{
+  background-color: rgb(200, 217, 226) !important;
+  color:black !important;
+}
+input[type=button]{
+  background: #d6d6d6 !important;
+}
+.xOTB-level1, .xOTB-level2{
+  background: transparent !important;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle, 
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), 
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, 
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, 
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: rgb(133, 200, 236) !important;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+  border-color: rgb(133, 200, 236) !important;
+}
+.xOTB-dot{
+  width: 2% !important;
+}
+.xOTB-next, .xOTB-prev{
+  color: rgb(200, 217, 226) !important;
+}
+.xOTB-container > label.xOTB-label,
+h4.xOTB-heading{
+  color: black !important;
+}

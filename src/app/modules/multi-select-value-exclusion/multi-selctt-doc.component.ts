@@ -15,14 +15,14 @@ export class MultiSelcttDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "selectorOptions", datatype: 'ISelectorOptions', default: "Undefined", description: 'It will select the drop down values'},
+    {attribute: "selectorOptions", datatype: 'ISelectorOptions', default: "Undefined", description: 'Options to display parent and child dropdowns'},
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "onChange", eventType: 'Object', description: 'It will trigger whenever parent dropdown change happens'},
-    {methodName: "onChangeSubOption", eventType: 'Object', description: 'It will trigger whenever child dropdown change happens'},
-    {methodName: "addFormControl", eventType: 'Object', description: 'It will trigger the when we click on add new dropdown'},
-    {methodName: "deleteControl", eventType: 'Object', description: 'It will trigger the when we click delete dropdown button'},
+    {methodName: "onChange", eventType: 'Object', description: 'triggered on parent dropdown value change'},
+    {methodName: "onChangeSubOption", eventType: 'Object', description: 'triggered on child dropdown value change'},
+    {methodName: "addFormControl", eventType: 'Object', description: 'triggered on button click to add new dropdown'},
+    {methodName: "deleteControl", eventType: 'Object', description: 'triggered on button click to delete dropdown button'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -50,7 +50,8 @@ export class MultiSelcttDocComponent implements OnInit {
   ngOnInit() {
 
     this.description = `
-    Multi Select Value Component
+    Dropdown which helps to display second drop down based on the option selected in first drop down. 
+    Example: The dropdown can be used in cases like selecting category and sub-category 
     `;
     this.moduleImport = `
       import { MultiSelect } from 'edge-xotb-ng';

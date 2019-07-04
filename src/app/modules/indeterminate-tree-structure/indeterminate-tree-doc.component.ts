@@ -27,14 +27,14 @@ export class IndetreeDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "node", datatype: 'object', default: "Void", description: 'It will provide the node items.'},
-    {attribute: "image1", datatype: 'Number', default: "", description: 'Here we can change the primary image url.'},
-    {attribute: "image2", datatype: 'String', default: "", description: 'Here we can change the secondary image url.'},
-    {attribute: "getColorCode", datatype: 'String', default: "red", description: 'Here we can change the font color.'}
+    {attribute: "node", datatype: 'object', default: "Void", description: 'Provide node items.'},
+    {attribute: "image1", datatype: 'Number', default: "", description: 'customize primary image url.'},
+    {attribute: "image2", datatype: 'String', default: "", description: 'customize secondary image url.'},
+    {attribute: "getColorCode", datatype: 'String', default: "red", description: 'customize the font color.'}
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "selectEvents", eventType: 'event', description: 'Here we recieved the callback function when we click the selected node.'},
+    {methodName: "selectEvents", eventType: 'event', description: 'Event triggered on selected node click.'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -47,7 +47,7 @@ export class IndetreeDocComponent implements OnInit {
   ngOnInit() {
 
     this.description = `
-    Indetermine Tree Highlights In this mode when the user clicks an item its children or sub items also become. 
+    Component to display data in tree structure till four levels. Provides options to customise tree icons, display/hide check boxes, and corresponsing events are triggered on checking/unchecking a tree node.
     `;
 
     this.moduleImport = `

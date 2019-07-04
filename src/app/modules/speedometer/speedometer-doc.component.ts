@@ -15,13 +15,13 @@ export class SpeedometerDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "wheelColor", datatype: 'String', default: "#f6f5f6", description: 'It will change the Wheel Color'},
-    {attribute: "speedoMeterColor", datatype: 'String', default: "#fe6c5c", description: 'It will change the speedo meter Wheel color'},
-    {attribute: "max", datatype: 'Number', default: "100", description: 'It will set the maximum value for speedometer'}
+    {attribute: "wheelColor", datatype: 'String', default: "#f6f5f6", description: 'Change the Wheel Color'},
+    {attribute: "speedoMeterColor", datatype: 'String', default: "#fe6c5c", description: 'Change the speedo meter Wheel color'},
+    {attribute: "max", datatype: 'Number', default: "100", description: 'Set the maximum value for speedometer'}
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "selectedValue", eventType: 'number', description: 'It will give you the selected SpeedometerValue'},
+    {methodName: "selectedValue", eventType: 'number', description: 'return current Speedometer value'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -34,7 +34,7 @@ export class SpeedometerDocComponent implements OnInit {
   ngOnInit() {
 
     this.description = `
-    Speedometer Component
+    Component which renders a speedmeter. The values on the meter changes based in the input value. It has options to customize the look and feel, set max. value,etc.
     `;
     this.moduleImport = `
       import { Speedometer } from 'edge-xotb-ng';

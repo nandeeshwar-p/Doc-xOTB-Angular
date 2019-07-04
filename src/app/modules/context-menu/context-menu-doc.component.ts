@@ -15,12 +15,12 @@ export class ContextMenuDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "data", datatype: 'object', default: "", description: 'Here we can pass the context menu options.'},
+    {attribute: "data", datatype: 'object', default: "", description: 'Pass Menuitems to be displayed in ContextMenu'},
     ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "optionClick", eventType: 'event', description: 'Get the callback when context menu option click'},
-  {methodName: "closed", eventType: 'event', description: 'This is the callback when context menu close'},
+    {methodName: "optionClick", eventType: 'event', description: 'callback on context menu option click'},
+  {methodName: "closed", eventType: 'event', description: 'triggered on context menu closure'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);

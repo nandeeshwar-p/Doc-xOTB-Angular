@@ -11,40 +11,37 @@
 }
 .xOTB-actions-div{
   margin: 20px;
-  border: 1px solid lightgrey;
+  border: 0px solid lightgrey;
   width: 80%;
 }
 .xOTB-actions-nav-div{
-width: 100%;
-background-color: lightgrey;
-display:flex;
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  padding-bottom: 0.5em;
+  /* float: right; */
 }
 .xOTB-actions-btn-div{
-  width: 21%;
-  margin: 2%;
-  background-color: #BDC7D1;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: 30px;
-  text-align: center;
-  padding-top: 10px;
+  text-align: start;
+  margin: 0px;
+  padding:0px;
+  color:#0000cc;
   cursor: pointer;
-  border:2px solid #BDC7D1;
-  color:black;
-  font-weight: normal;
-  text-decoration: none;
+  font-size: 0.9em;
+  padding-left: 10px;
+  font-weight: 400;
 }
 
 .xOTB-actions-btn-click-div{
  text-decoration: underline;
-  /* font-weight: bold; */
+ color:#882850;
+ font-size: 1em;
 }
 .xOTB-actions-btn-content-div{
   text-align: center;
-  /* color: darkgrey; */
-  /* overflow-y: scroll; */
   position: relative;
   height: 85%;
+  border-top: 2px solid grey;
 }
 
 .xOTB-first-div{
@@ -99,18 +96,16 @@ display:flex;
   margin:10px;
 }
 :host /deep/ .mainSelectorStyle{
-  background-color: aquamarine;
+  background-color: rgb(200, 217, 226);
 }
 :host /deep/ .mainOptionStyle{
-  background-color: aqua;
+  background-color: rgb(165, 172, 172);
 }
 :host /deep/ .subSelectorStyle{
-  background-color: coral;
-  color:white;
+  background-color: rgb(200, 217, 226);
 }
 :host /deep/ .subOptionStyle{
-  background-color: rgb(139, 45, 10);
-  color:white;
+  background-color: rgb(165, 172, 172);
 }
 :host /deep/ .containerStyle{
   max-width: fit-content;
@@ -120,7 +115,7 @@ display:flex;
 }
 :host /deep/ .headerStyle{
   border-bottom:1px black solid;
-  background: dimgray;
+  background: rgb(200, 217, 226);
   margin: auto;
   text-align: center;
   margin-bottom: 10px;
@@ -130,6 +125,8 @@ display:flex;
   padding-top:20px;
   padding-bottom: 10px;
   color: black;
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
 body{
