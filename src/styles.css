@@ -37,7 +37,7 @@ font-size: 20px;font-weight: 700;text-align: left;margin-left: 10px;
     font-weight: 400;
   }
   .cdk-column-MethodName , .cdk-column-Attribute {
-    color:#0000cc;
+    color:#4e7990;
     cursor: pointer;
   }
 
@@ -64,7 +64,7 @@ font-size: 20px;font-weight: 700;text-align: left;margin-left: 10px;
     text-align: start;
     margin: 0px;
     padding:0px;
-    color:#0000cc;
+    color:#4e7990;
     cursor: pointer;
     font-size: 14px;
     padding-left: 10px;
