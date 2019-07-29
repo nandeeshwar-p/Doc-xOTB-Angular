@@ -18,6 +18,7 @@ export class DynamicFormDocComponent implements OnInit {
 
   private input_element_data: IinputElement[] = [
     {attribute: "jsonFormData", datatype: 'Object', default: "undefined", description: 'json object with element names and properties'},
+    {attribute: "rowCount", datatype: 'number', default: "1", description: 'It will tell the how many elements to inserted in a row.'}
   ];
 
   private output_element_data: IoutputElement[] = [
