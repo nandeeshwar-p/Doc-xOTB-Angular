@@ -84,20 +84,79 @@
           (addFormControl)="addFormControl($event)" (deleteControl)="deleteControl($event)">
         </app-multi-select-value>
         <ng-container *ngIf="isAcordionGroup">
-          <div fxLayout="column" fxLayoutGap="20px" class="xOTB-margin">
-            <accordion-group [title]="'first accordion'">
-              <h4>content</h4>
-            </accordion-group>
-            <accordion-group [title]="'second accordion'">
-              <h4>content</h4>
-            </accordion-group>
-            <accordion-group [title]="'third accordion'">
-              <h4>content</h4>
-            </accordion-group>
-            <accordion-group [title]="'four accordion'">
-              <h4>content</h4>
-            </accordion-group>
-          </div>
+
+
+            <div class="instruction">
+              <h2>Sample default demo</h2>
+                <br/>
+                <app-accordion [openFirst]="openFirst1" (toggle)="onChangeAccordionToggle($event)">
+                    <accordion-group [title]="title1" [description]="description1" [icon]="icon1" [open]="open1" [close]="close1">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                            </div>
+                            <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                            </div>
+                            <div class="checkbox">
+                            <label><input type="checkbox" name="remember"> Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>            
+                    </accordion-group>
+                    <accordion-group [title]="title2" [description]="description1" [icon]="icon2" [open]="open2" [close]="close2">
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                    <button type="button" class="btn btn-secondary">1</button>
+                                    <button type="button" class="btn btn-secondary">2</button>
+                                    
+                                    <div class="btn-group" role="group">
+                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Dropdown
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Dropdown link</a>
+                                        <a class="dropdown-item" href="#">Dropdown link</a>
+                                        </div>
+                                    </div>
+                                    </div>                 
+                    </accordion-group>
+                </app-accordion>
+                <br/>
+                <h2>Sample custom demo</h2>
+                <br/>
+                <app-accordion [openFirst]="openFirst2" (toggle)="onChangeAccordionToggle($event)">
+                    <accordion-group [title]="title3" [description]="description2" [icon]="icon3" [open]="open3" [close]="close3">
+                            <form class="form-horizontal">
+                                    <div class="form-group">
+                                      <label class="control-label col-sm-2" for="email">Email:</label>
+                                      <div class="col-sm-10">
+                                        <p class="form-control-static">someone@example.com</p>
+                                      </div>
+                                    </div>
+                                  </form>  
+                    </accordion-group>
+                    <accordion-group [title]="title4" [description]="description2" [icon]="icon4" [open]="open4" [close]="close4">
+                       <form>
+              <div class="form-group">
+                <label for="inputsm">Small input</label>
+                <input class="form-control input-sm" id="inputsm" type="text">
+              </div>
+               <div class="form-group">
+                <label for="inputdefault">Default input</label>
+                <input class="form-control" id="inputdefault" type="text">
+              </div>
+              <div class="form-group">
+                <label for="inputlg">Large input</label>
+                <input class="form-control input-lg" id="inputlg" type="text">
+              </div>
+            </form>      
+                    </accordion-group>
+                </app-accordion>     
+            </div>
+
+
+
+
         </ng-container>
         <app-modal *ngIf="isModelDialog" class="xOTB-margin" [modalOptions]="modalOptions">
         </app-modal>
@@ -131,7 +190,8 @@
         <ng-container *ngIf="isFormCreation">
           <h2>Sample default demo</h2>
 
-          <app-form-generator [jsonFormData]='formJson' (btnEvent)="onDynamicFormButtonInfor($event)">
+          <app-form-generator [jsonFormData]='formJson' (btnEvent)="onDynamicFormButtonInfor($event)"
+                      (rowCount)="4">
           </app-form-generator>
 
           <h2>Sample custom demo</h2>
@@ -159,7 +219,7 @@
         </ng-container>
 
         <app-indetermine-tree *ngIf="isIndetermineTree" class="xOTB-margin"></app-indetermine-tree>
-        <app-context-root *ngIf="isContextMenu" class="xOTB-margin"></app-context-root>
+        <app-context-menu *ngIf="isContextMenu" class="xOTB-margin"></app-context-menu>
       </div>
       <div *ngIf="isDocumentation">
 
