@@ -220,7 +220,18 @@
         </ng-container>
 
         <app-indetermine-tree *ngIf="isIndetermineTree" class="xOTB-margin"></app-indetermine-tree>
-        <app-context-menu *ngIf="isContextMenu" class="xOTB-margin"></app-context-menu>
+
+        <ng-container *ngIf="isContextMenu">
+          <h2>Sample default demo</h2>
+          <div class="parent">Context Menu Area
+
+            <app-context-menu [data]="data" 
+              (optionClick)="contextMenuEvent($event)" (closed)="contextMenuEvent($event)"></app-context-menu>
+          
+          </div>
+
+        </ng-container>
+       
       </div>
       <div *ngIf="isDocumentation">
 

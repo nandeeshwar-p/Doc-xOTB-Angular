@@ -59,6 +59,13 @@ export class AppComponent {
   public description1;
   public description2;
 
+  data = [
+    {name: 'Subscribe', disabled: true},
+    {name: 'Edit'},
+    {name: 'Delete'},
+    {name: 'Properties'}
+  ];
+
   constructor(private _http: HttpClient){}
 
   ngOnInit() {
@@ -173,6 +180,10 @@ export class AppComponent {
 
 
     this.onSelectTab('multiSelvalue');
+  }
+
+  contextMenuEvent(obj){
+    console.log(JSON.stringify(obj));
   }
 
   onChangeAccordionToggle(obj){
