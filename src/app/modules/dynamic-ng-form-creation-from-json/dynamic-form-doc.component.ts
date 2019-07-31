@@ -45,7 +45,8 @@ export class DynamicFormDocComponent implements OnInit {
     this.example = `
     Sample default example
 
-    <app-form-generator [jsonFormData]='formJson' (btnEvent)="onDynamicFormButtonInfor($event)">
+    <app-form-generator [jsonFormData]='formJson' (btnEvent)="onDynamicFormButtonInfor($event)"
+                        [rowCount]="4">
     </app-form-generator>
 
     Sample attribute example

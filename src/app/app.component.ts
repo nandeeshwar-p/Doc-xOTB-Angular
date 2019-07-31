@@ -4,6 +4,15 @@ import {ISelectorOptions} from 'edge-xotb-ng';
 import {IModalOptions} from 'edge-xotb-ng';
 
 @Component({
+  template: `
+    <div>external component</div>
+  `,
+  selector: 'comp-to-add'
+})
+export class TempComp {}
+
+
+@Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -140,22 +149,29 @@ export class AppComponent {
         },
         extraSelectorsRequired:false
     };
-    this.modalOptions={
-      title:"First Modal Window",
-      isNextModalRequired:true,
-      content:"Your Content Here",
-      nextModalOptions:{
-        title:"Second Modal Window",
-        isNextModalRequired:true,
-        content:"Your Content Here",
-        nextModalOptions:{
-          title:"Third Modal Window",
-          isNextModalRequired:false,
-          content:"Your Content Here",
-          nextModalOptions:null
+
+
+    this.modalOptions = {
+      title: 'First Modal Window',
+      isNextModalRequired: true,
+      content: 'Your Content Here',
+      customComponent: TempComp,
+      nextModalOptions: {
+        title: 'Second Modal Window',
+        isNextModalRequired: true,
+        content: 'Your Content Here',
+        customComponent: null,
+        nextModalOptions: {
+          customComponent: TempComp,
+          title: 'Third Modal Window',
+          isNextModalRequired: false,
+          content: 'Your Content Here',
+          nextModalOptions: null
         }
       }
-    }
+    };
+
+
     this.onSelectTab('multiSelvalue');
   }
 
@@ -209,6 +225,9 @@ export class AppComponent {
     this.isMore = true;
   }
 
+  onModalButtonClick(obj){
+    console.log('onModalButton '+ JSON.stringify(obj));
+  }
 
   onSelectTab(selButton){
     this.isExpand = false;

@@ -35,6 +35,7 @@ export class ModalWindowDocComponent implements OnInit {
   ];
 
   private output_element_data: IoutputElement[] = [
+    {methodName: "buttonEvent", eventType: 'object', description: 'returns show model level and button name'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -56,9 +57,35 @@ export class ModalWindowDocComponent implements OnInit {
     this.example = `
     Sample example
 
-    <app-modal [modalOptions]="modalOptions">
+    <app-modal class="xOTB-margin" [modalOptions]="modalOptions"
+        (buttonEvent)="onModalButtonClick($event)">
     </app-modal>
 
+    modalOptions example
+
+    this.modalOptions = {
+      title: 'First Modal Window',
+      isNextModalRequired: true,
+      content: 'Your Content Here',
+      customComponent: TempComp,
+      nextModalOptions: {
+        title: 'Second Modal Window',
+        isNextModalRequired: true,
+        content: 'Your Content Here',
+        customComponent: null,
+        nextModalOptions: {
+          customComponent: TempComp,
+          title: 'Third Modal Window',
+          isNextModalRequired: false,
+          content: 'Your Content Here',
+          nextModalOptions: null
+        }
+      }
+    };
+
+    For dynamic components (customComponent attribute), we should inject in entrycomponent also.
+
+    entryComponents:[TempComp]
     `;
   }
 }

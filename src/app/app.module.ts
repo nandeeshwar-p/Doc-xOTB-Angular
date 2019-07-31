@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent, TempComp } from './app.component';
 import { HeaderEDGEComponent } from './header-edge/header-edge.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +28,7 @@ import {ImageSliderDocComponent} from './modules/image-slider/image-slider-doc.c
 import {IndetreeDocComponent} from './modules/indeterminate-tree-structure/indeterminate-tree-doc.component';
 import {ModalWindowDocComponent} from './modules/modal-window/modal-window-doc.component';
 import {MultiSelcttDocComponent} from './modules/multi-select-value-exclusion/multi-selctt-doc.component';
-import{SpeedometerDocComponent} from './modules/speedometer/speedometer-doc.component';
+import {SpeedometerDocComponent} from './modules/speedometer/speedometer-doc.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import{SpeedometerDocComponent} from './modules/speedometer/speedometer-doc.comp
     IndetreeDocComponent,
     ModalWindowDocComponent,
     MultiSelcttDocComponent,
-    SpeedometerDocComponent
+    SpeedometerDocComponent,
+    TempComp
   ],
   imports: [
     BrowserModule,
@@ -63,6 +64,7 @@ import{SpeedometerDocComponent} from './modules/speedometer/speedometer-doc.comp
     DemoMaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[TempComp]
 })
 export class AppModule { }

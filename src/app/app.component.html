@@ -158,7 +158,8 @@
 
 
         </ng-container>
-        <app-modal *ngIf="isModelDialog" class="xOTB-margin" [modalOptions]="modalOptions">
+        <app-modal *ngIf="isModelDialog" class="xOTB-margin" [modalOptions]="modalOptions"
+        (buttonEvent)="onModalButtonClick($event)">
         </app-modal>
         <app-pagination *ngIf="isPagination" class="xOTB-margin"></app-pagination>
 
@@ -191,7 +192,7 @@
           <h2>Sample default demo</h2>
 
           <app-form-generator [jsonFormData]='formJson' (btnEvent)="onDynamicFormButtonInfor($event)"
-                      (rowCount)="4">
+                      [rowCount]="4">
           </app-form-generator>
 
           <h2>Sample custom demo</h2>
