@@ -213,8 +213,8 @@
           <h2>Sample custom demo</h2>
 
           <app-image-slider [imagesData]='imagesData' (currentImage)="onImageSelected($event);" [arrowColor]="'black'"
-            [arrowBgColor]="'yellow'" [texColor]="'yellow'" [bottomButtonColor]="'grey'"
-            [bottomButtonSelectedColor]="'yellow'">
+            [arrowBgColor]="'grey'" [texColor]="'grey'" [bottomButtonColor]="'grey'"
+            [bottomButtonSelectedColor]="'black'">
           </app-image-slider>
 
         </ng-container>
@@ -222,14 +222,9 @@
         <app-indetermine-tree *ngIf="isIndetermineTree" class="xOTB-margin"></app-indetermine-tree>
 
         <ng-container *ngIf="isContextMenu">
-          <h2>Sample default demo</h2>
-          <div class="parent">Context Menu Area
-
-            <app-context-menu [data]="data" 
-              (optionClick)="contextMenuEvent($event)" (closed)="contextMenuEvent($event)"></app-context-menu>
-          
-          </div>
-
+            <div class="parent">Context Menu Area
+              <app-context-menu [data]=data (optionClick)="contextMenuEvent($event)" (closed)="contextMenuEvent($event)"></app-context-menu>
+            </div>
         </ng-container>
        
       </div>
