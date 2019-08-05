@@ -28,13 +28,14 @@ export class IndetreeDocComponent implements OnInit {
 
   private input_element_data: IinputElement[] = [
     {attribute: "node", datatype: 'object', default: "Void", description: 'Provide node items.'},
-    {attribute: "image1", datatype: 'Number', default: "", description: 'customize primary image url.'},
-    {attribute: "image2", datatype: 'String', default: "", description: 'customize secondary image url.'},
-    {attribute: "getColorCode", datatype: 'String', default: "red", description: 'customize the font color.'}
+    {attribute: "image1", datatype: 'Number', default: "", description: 'Customize primary image url.'},
+    {attribute: "image2", datatype: 'String', default: "", description: 'Customize secondary image url.'},
+    {attribute: "getColorCode", datatype: 'String', default: "red", description: 'Customize the font color.'},
+    {attribute: "title", datatype: 'String', default: "", description: 'Tree structure title'}
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "selectEvents", eventType: 'event', description: 'Event triggered on selected node click.'},
+    {methodName: "onNodeSelected", eventType: 'event', description: 'Event triggered on selected node click.'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -55,14 +56,10 @@ export class IndetreeDocComponent implements OnInit {
     `;
 
     this.example = `
-    Sample default example
-
-    <app-tree-node (selectEvents)="handleSelection( $event )" [selectedNode]="selectedTreeNode"> </app-tree-node>   
-
-    Sample attribute example
-
-    <app-tree-node [node]="tree" image1="green.png" image2="../../assets/red.png" getColorCode="red" (selectEvents)="handleSelection( $event )"
-    [selectedNode]="selectedTreeNode"> </app-tree-node>
+      <app-tree-node title="Sample Tree Structure" [node]="tree1" image1="../assets/green1.png" 
+        image2="../assets/red1.png" getColorCode="red" 
+        (onNodeSelected)="handleSelection( $event )" [selectedNode]="selectedTreeNode">
+      </app-tree-node>
     `;
   }
 }

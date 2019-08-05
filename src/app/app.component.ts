@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {ISelectorOptions} from 'edge-xotb-ng';
 import {IModalOptions} from 'edge-xotb-ng';
+import {TreeNode} from 'edge-xotb-ng';
 
 @Component({
   template: `
@@ -46,7 +47,14 @@ export class AppComponent {
   selectorOptions:ISelectorOptions;
   selectorOptions1:ISelectorOptions;
   modalOptions:IModalOptions;
+  modalOptions1:IModalOptions;
 
+  buttonStyle:any;
+  buttonTitle:String;
+  tree:TreeNode;
+  tree1:TreeNode;
+  pagingData:Array<any>;
+  pagingData1:Array<any>;
 
   public title1;
   public title2;
@@ -58,36 +66,43 @@ export class AppComponent {
   public toggle2;
   public description1;
   public description2;
+  public icon1;
+  public open1;
+  public close1;
+  public icon3;
+  public open3;
+  public close3;
 
   data = [
+    {name: 'Option1', disabled: true},
+    {name: 'Option2'},
+    {name: 'Option3'},
+    {name: 'Option4'}
+  ];
+  data1 = [
     {name: 'Subscribe', disabled: true},
     {name: 'Edit'},
     {name: 'Delete'},
     {name: 'Properties'}
   ];
-
   constructor(private _http: HttpClient){}
 
   ngOnInit() {
 
-    this.title1 = 'Dashboard';
-    this.title2 = 'Calendar';
-    this.title3 = 'Folder';
-    this.title4 = 'Shopping Cart';
-    this.description1 = 'Click on + to expand, - to collapse';
-    this.description2 = 'Click on + to expand current, collapse other';
-    // this.icon1 = 'fas fa-book';
-    // this.icon2 = 'fas fa-calendar';
-    // this.icon3 = 'fas fa-folder';
-    // this.icon4 = 'fas fa-shopping-cart';
-    // this.open1 = 'fas fa-plus';
-    // this.open2 = 'fas fa-calendar-plus';
-    // this.open4 = 'fas fa-plus-circle';
-    // this.open3 = 'fas fa-folder-plus';
-    // this.close1 = 'fas fa-minus';
-    // this.close2 = 'fas fa-calendar-minus';
-    // this.close4 = 'fas fa-minus-circle';
-    // this.close3 = 'fas fa-folder-minus';
+    this.title1 = '';
+    this.title2 = '';
+    this.title3 = '';
+    this.title4 = '';
+    this.description1 = 'Default Accordion';
+    this.description2 = 'Customized Accordion';
+    this.icon1 = 'icon1';
+    this.open1 = 'open1';
+    this.close1 = 'close1';
+
+    this.icon3 = 'icon3';
+    this.open3 = 'open3';
+    this.close3 = 'close3';
+
     this.openFirst1 = false;
     this.toggle1 = false;
     this.openFirst2 = true;
@@ -119,8 +134,8 @@ export class AppComponent {
         }],
         title:"Select category and sub-category",
         styles:{
-          containerStyle:"containerStyle",
-          headerStyle:"headerStyle",
+          containerStyle:"",
+          headerStyle:"",
           mainSelectorStyle : "",
           mainOptionStyle : "",
           subSelectorStyle : "",
@@ -147,12 +162,12 @@ export class AppComponent {
         }],
         title:"Select category and sub-category",
         styles:{
-          containerStyle:"containerStyle",
-          headerStyle:"headerStyle",
-          mainSelectorStyle : "mainSelectorStyle",
-          mainOptionStyle : "mainOptionStyle",
-          subSelectorStyle : "subSelectorStyle",
-          subOptionStyle : "subOptionStyle"
+          containerStyle:"containerStyle1",
+          headerStyle:"headerStyle1",
+          mainSelectorStyle : "mainSelectorStyle1",
+          mainOptionStyle : "mainOptionStyle1",
+          subSelectorStyle : "subSelectorStyle1",
+          subOptionStyle : "subOptionStyle1"
         },
         extraSelectorsRequired:false
     };
@@ -163,22 +178,279 @@ export class AppComponent {
       isNextModalRequired: true,
       content: 'Your Content Here',
       customComponent: TempComp,
+      headerStyle:null,
+      footerStyle:null,
+      bodyStyle:null,
+      btnStyle:null,
       nextModalOptions: {
         title: 'Second Modal Window',
         isNextModalRequired: true,
         content: 'Your Content Here',
         customComponent: null,
+        headerStyle:null,
+        footerStyle:null,
+        bodyStyle:null,
+        btnStyle:null,
         nextModalOptions: {
           customComponent: TempComp,
           title: 'Third Modal Window',
           isNextModalRequired: false,
           content: 'Your Content Here',
-          nextModalOptions: null
+          nextModalOptions: null,
+          headerStyle:null,
+          footerStyle:null,
+          bodyStyle:null,
+          btnStyle:null
         }
       }
     };
 
+    this.modalOptions1 = {
+      title: 'First Modal Window',
+      isNextModalRequired: true,
+      content: 'Your Content Here',
+      customComponent: TempComp,
+      headerStyle:'modal-header',
+      footerStyle:'modal-footer',
+      bodyStyle:'modal-body',
+      btnStyle:'btn-style',
+      nextModalOptions: {
+        title: 'Second Modal Window',
+        isNextModalRequired: true,
+        content: 'Your Content Here',
+        customComponent: null,
+        headerStyle:'modal-header',
+        footerStyle:'modal-footer',
+        bodyStyle:'modal-body',
+        btnStyle:'btn-style',
+        nextModalOptions: {
+          customComponent: TempComp,
+          title: 'Third Modal Window',
+          isNextModalRequired: false,
+          content: 'Your Content Here',
+          nextModalOptions: null,
+          headerStyle:'modal-header',
+          footerStyle:'modal-footer',
+          bodyStyle:'modal-body',
+          btnStyle:'btn-style'
+        }
+      }
+    };
 
+    this.tree = {
+      label: 'TreeStructure',
+      checked: false,
+      children: [
+        {
+          label: 'src',
+          checked: false,
+          children: [
+            {
+              label: 'app',
+              checked: false,
+              children: [
+                {
+                  label: 'app.component.html',
+                  checked: false,
+                  children: []
+                },
+                {
+                  label: 'app.component.ts',
+                  checked: false,
+                  children: []
+                },
+                {
+                  label: 'app.component.css',
+                  checked: false,
+                  children: []
+                },
+                {
+                  label: 'tree-node',
+                  checked: false,
+                  children: [
+                    {
+                      label: 'tree-node.component.html',
+                      checked: false,
+                      children: []
+                    },
+                    {
+                      label: 'tree-node.component.ts',
+                      checked: false,
+                      children: []
+                    },
+                    {
+                      label: 'tree-node.component.css',
+                      checked: false,
+                      children: []
+                    }
+                  ]
+                }
+            ]
+            }
+          ]
+        },
+        {
+          label: 'assets',
+          checked: false,
+          children: [
+            {
+              label: '.gitkeep',
+              checked: false,
+              children: []
+            }
+          ]
+        },
+        {
+          label: 'environments',
+          checked: false,
+          children: [
+            {
+              label: 'environment.prod.ts',
+              checked: false,
+              children: []
+            },
+            {
+              label: 'environment.ts',
+              checked: false,
+              children: []
+            }
+          ]
+        },
+        {
+            label: 'index.html',
+            checked: false,
+            children: []
+
+        }
+      ]
+    };
+
+    this.tree1 = {
+      label: 'Alex',
+      checked: false,
+      children: [
+        {
+          label: 'Emma',
+          checked: false,
+          children: [
+            {
+              label: 'Kelvin',
+              checked: false,
+              children: [
+                {
+                  label: 'William',
+                  checked: false,
+                  children: []
+                },
+                {
+                  label: 'John',
+                  checked: false,
+                  children: []
+                },
+                {
+                  label: 'James',
+                  checked: false,
+                  children: []
+                },
+                {
+                  label: 'Benjamin',
+                  checked: false,
+                  children: [
+                    {
+                      label: 'Lucas',
+                      checked: false,
+                      children: []
+                    },
+                    {
+                      label: 'Michael',
+                      checked: false,
+                      children: []
+                    },
+                    {
+                      label: 'Jacob',
+                      checked: false,
+                      children: []
+                    }
+                  ]
+                }
+            ]
+            }
+          ]
+        },
+        {
+          label: 'Sebastian',
+          checked: false,
+          children: [
+            {
+              label: 'Samuel',
+              checked: false,
+              children: []
+            }
+          ]
+        },
+        {
+          label: 'Grayson',
+          checked: false,
+          children: [
+            {
+              label: 'Lily',
+              checked: false,
+              children: []
+            },
+            {
+              label: 'Noha',
+              checked: false,
+              children: []
+            }
+          ]
+        },
+        {
+            label: 'Anthony',
+            checked: false,
+            children: []
+
+        }
+      ]
+    };
+
+    this.pagingData = [
+      "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+      "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+      "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+      "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit",
+      "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
+      "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae",
+      "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas",
+      "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae",
+      "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas",
+      "quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error",
+      "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus\naccusamus in eum beatae sit\nvel qui neque voluptates ut commodi qui incidunt\nut animi commodi",
+      "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio",
+      "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam",
+      "fuga et accusamus dolorum perferendis illo voluptas\nnon doloremque neque facere\nad qui dolorum molestiae beatae\nsed aut voluptas totam sit illum",
+      "reprehenderit quos placeat\nvelit minima officia dolores impedit repudiandae molestiae nam\nvoluptas recusandae quis delectus\nofficiis harum fugiat vitae",
+      "suscipit nam nisi quo aperiam aut\nasperiores eos fugit maiores voluptatibus quia\nvoluptatem quis ullam qui in alias quia est\nconsequatur magni mollitia accusamus ea nisi voluptate dicta",
+      "eos voluptas et aut odit natus earum\naspernatur fuga molestiae ullam\ndeserunt ratione qui eos\nqui nihil ratione nemo velit ut aut id quo",
+      "eveniet quo quis\nlaborum totam consequatur non dolor\nut et est repudiandae\nest voluptatem vel debitis et magnam",
+      "illum quis cupiditate provident sit magnam\nea sed aut omnis\nveniam maiores ullam consequatur atque\nadipisci quo iste expedita sit quos voluptas",
+      "qui consequuntur ducimus possimus quisquam amet similique\nsuscipit porro ipsam amet\neos veritatis officiis exercitationem vel fugit aut necessitatibus totam\nomnis rerum consequatur expedita quidem cumque explicabo",
+      "repellat aliquid praesentium dolorem quo\nsed totam minus non itaque\nnihil labore molestiae sunt dolor eveniet hic recusandae veniam\ntempora et tenetur expedita sunt"
+    ];
+
+    this.pagingData1 = [
+      "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+      "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+      "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+      "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit",
+      "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
+      "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae",
+      "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas",
+      "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae",
+      "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
+    ];
+
+    this.buttonTitle = "Open Custom Modal";
+    this.buttonStyle = "modal-instruction";
     this.onSelectTab('multiSelvalue');
   }
 
@@ -207,6 +479,9 @@ export class AppComponent {
     }
   }
 
+  onPageChange(event){
+    console.log('pageChange event ',event);
+  }
   onSpeedMeter(value){
     console.log('speed meter value '+value);
   }
@@ -358,7 +633,7 @@ onDynamicForm(){
   this.isAcordionGroup=false;
   this.isModelDialog = false;
   this.isSpeedoMeter=false;
-  this.isDynamicForm=true;
+  this.isDynamicForm=false;
   this.isFormCreation=false;
   this.isImageSlider=false;
   this.isIndetermineTree=false;

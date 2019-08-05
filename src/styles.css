@@ -57,13 +57,14 @@ font-size: 20px;font-weight: 700;text-align: left;margin-left: 10px;
     padding-left: 10px;
     font-weight: 600;
     font-size: 1.1em;
+    text-align: left;
   }
 
 
   h6 {
     text-align: start;
     margin: 0px;
-    padding:0px;
+    padding:0.1rem;
     color:#4e7990;
     cursor: pointer;
     font-size: 14px;
@@ -103,26 +104,19 @@ font-size: 20px;font-weight: 700;text-align: left;margin-left: 10px;
   .mat-expansion-panel-header.mat-expanded:hover{
     background-color: rgb(200, 217, 226) !important;
   }
-.xOTB-modal-header {
+/* .xOTB-modal-header {
     max-height: 10vh!important;
     background-color: rgb(200, 217, 226) !important;
     color: black !important;
-    padding: 2%;
-}
-.xOTB-modal-footer{
+   
+} */
+/* .xOTB-modal-footer{
   max-height: 10vh!important;
   background-color: rgb(200, 217, 226) !important;
   color: black !important;
   padding: 2%;
-}
-.xOTB-close{
-  color: black !important;
-}
+} */
 
-.xOTB-speedometerReading{
-  border: 20px solid rgb(200, 217, 226) !important;
-  border-color: transparent transparent rgb(200, 217, 226) rgb(200, 217, 226) !important;
-}
 input[type=text]{
   background-color: rgb(200, 217, 226) !important;
   color:black !important;
@@ -130,9 +124,7 @@ input[type=text]{
 input[type=button]{
   background: #d6d6d6 !important;
 }
-.xOTB-level1, .xOTB-level2{
-  background: transparent !important;
-}
+
 .mat-radio-button.mat-accent .mat-radio-inner-circle, 
 .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), 
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, 

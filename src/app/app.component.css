@@ -34,7 +34,7 @@
 
 .xOTB-actions-btn-click-div{
  text-decoration: underline;
- color:#4e7990;
+ color:#0a11ea;
  font-size: 1em;
 }
 .xOTB-actions-btn-content-div{
@@ -95,25 +95,26 @@
 .xOTB-doc-margin{
   margin:10px;
 }
-:host /deep/ .mainSelectorStyle{
+:host /deep/ .mainSelectorStyle1{
   background-color: rgb(200, 217, 226);
 }
-:host /deep/ .mainOptionStyle{
+:host /deep/ .mainOptionStyle1{
   background-color: rgb(165, 172, 172);
 }
-:host /deep/ .subSelectorStyle{
+:host /deep/ .subSelectorStyle1{
   background-color: rgb(200, 217, 226);
 }
-:host /deep/ .subOptionStyle{
+:host /deep/ .subOptionStyle1{
   background-color: rgb(165, 172, 172);
 }
-:host /deep/ .containerStyle{
+:host /deep/ .containerStyle1{
   max-width: fit-content;
   border:1px black solid;
   border-radius: 5pt;
   overflow: hidden;
+  margin: 1rem;
 }
-:host /deep/ .headerStyle{
+:host /deep/ .headerStyle1{
   border-bottom:1px black solid;
   background: rgb(200, 217, 226);
   margin: auto;
@@ -148,3 +149,110 @@ body{
   font-size: 16px;
 }
 
+.demo-panel{
+  border:1px dotted black ;
+  margin-bottom: 1rem;
+  border-radius: 5pt;
+}
+.demo-title{
+  align-items: flex-start;
+  text-align: left;
+  margin: 5px;
+  border-bottom: 1px solid lightgray;
+}
+
+:host /deep/ .open1::after {
+  content: '\2295';
+}
+
+:host /deep/ .close1::after {
+  content: '\2296';
+}
+
+:host /deep/ .icon1::after {
+  content: '\1F4C1';
+}
+
+:host /deep/ .open3::after {
+  content: '\23F7';
+}
+
+:host /deep/ .close3::after {
+  content: '\23F6';
+}
+
+:host /deep/ .icon3::after {
+  content: '\058D';
+}
+
+form{
+  text-align: left;
+}
+.context-menu-parent{
+  border: 1px solid black;
+  padding: 1.25em;
+  font-weight: bold;
+  font-size: 16px;
+  margin:1em;
+}
+
+.context-menu-parent1{
+  border: 1px solid rgb(223, 26, 26);
+  padding: 1.25em;
+  font-weight: bold;
+  font-size: 16px;
+  margin:1em;
+  background-color: lightslategray;
+  color:white;
+}
+
+:host /deep/ .modal-body {
+  max-height:50vh !important;
+  min-height: 25vh !important;
+  overflow: auto !important;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(0,0,0,0.2); 
+}
+
+:host /deep/ .modal-header {
+  max-height: 10vh !important;
+  background-color: white !important;
+  color: black !important;
+  padding: 0.5em;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+:host /deep/ .modal-footer{
+  max-height: 10vh!important;
+  background-color: white !important;
+  color: black !important;
+  padding: 0.5em;
+  border-top: 1px solid rgba(0,0,0,0.2); 
+}
+
+:host /deep/ .btn-style {
+  white-space: normal !important;
+  margin: 0px 0.5em !important;
+  background-color: lightslategray;
+}
+
+:host /deep/ .modal-instruction {
+  margin:10px;
+  top:10px;
+  background-color: lightgrey;
+  color: brown;
+}
+
+:host /deep/ .pagination-header {
+  margin:10px;
+  top:10px;
+  background-color: lightslategray;
+  color: black;
+}
+
+:host /deep/ .pagination-body {
+  margin:10px;
+  top:10px;
+  background-color: white;
+  color: black;
+}

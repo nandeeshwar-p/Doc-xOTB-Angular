@@ -32,10 +32,12 @@ export class ModalWindowDocComponent implements OnInit {
 
   private input_element_data: IinputElement[] = [
     {attribute: "modalOptions", datatype: 'IModalOptions', default: "Undefined", description: 'Pass modal window title, content, css classes as JSON object'},
+    {attribute: "buttonTitle", datatype: 'string', default: "", description: 'Button text'},
+    {attribute: "buttonStyle", datatype: 'string', default: "", description: 'Button styles class'}
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "buttonEvent", eventType: 'object', description: 'returns show model level and button name'},
+    {methodName: "buttonEvent", eventType: 'object', description: 'Returns show model level and button name'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);

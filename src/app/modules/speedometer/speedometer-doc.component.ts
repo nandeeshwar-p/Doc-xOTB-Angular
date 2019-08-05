@@ -17,11 +17,13 @@ export class SpeedometerDocComponent implements OnInit {
   private input_element_data: IinputElement[] = [
     {attribute: "wheelColor", datatype: 'String', default: "#f6f5f6", description: 'Change the Wheel Color'},
     {attribute: "speedoMeterColor", datatype: 'String', default: "#fe6c5c", description: 'Change the speedo meter Wheel color'},
-    {attribute: "max", datatype: 'Number', default: "100", description: 'Set the maximum value for speedometer'}
+    {attribute: "max", datatype: 'Number', default: "100", description: 'Set the maximum value for speedometer'},
+    {attribute: "title", datatype: 'String', default: "#fe6c5c", description: 'Component Title'},
+    {attribute: "labelText", datatype: 'String', default: "#fe6c5c", description: 'title of value label'}
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "selectedValue", eventType: 'number', description: 'return current Speedometer value'},
+    {methodName: "selectedValue", eventType: 'number', description: 'Return current Speedometer value'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -40,14 +42,9 @@ export class SpeedometerDocComponent implements OnInit {
       import { Speedometer } from 'edge-xotb-ng';
     `;
     this.example = `
-    Sample default example
-
-    <app-speedo-meter (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
-
-    Sample attribute example
-
-    <app-speedo-meter [speedoMeterColor]="'red'" [wheelColor]="'green'" [max]="300"
-    (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
+      <app-speedo-meter class="xOTB-margin" title="Sample Rating" labelText="Temperature"  
+        [speedoMeterColor]="'orange'" [wheelColor]="'green'" [max]="300" (selectedValue)="onSpeedMeter($event)">
+      </app-speedo-meter>
     `;
   }
 }

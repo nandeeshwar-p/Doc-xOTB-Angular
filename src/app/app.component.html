@@ -3,11 +3,11 @@
 <div class="xOTB-main-div">
   <div class="xOTB-nav-div">
     <h6 class="comp-h6">Components</h6>
-    <h6 (click)="onSelectTab('multiSelvalue')">Multi Select Value</h6>
-    <h6 (click)="onSelectTab('accordiongroup')">Acordion Group</h6>
-    <h6 (click)="onSelectTab('modeldialog')">Model Dialog</h6>
+    <h6 (click)="onSelectTab('multiSelvalue')">Multi Select</h6>
+    <h6 (click)="onSelectTab('accordiongroup')">Accordion Group</h6>
+    <h6 (click)="onSelectTab('modeldialog')">Modal Dialog</h6>
     <h6 (click)="onSelectTab('speedometer')">Speedo Meter</h6>
-    <h6 (click)="onSelectTab('dynamicform')">Dynamic Form</h6>
+    <!-- <h6 (click)="onSelectTab('dynamicform')">Dynamic Form</h6> -->
     <h6 (click)="onSelectTab('formcreation')">Form Creation</h6>
     <h6 (click)="onSelectTab('imageslider')">Image Slider</h6>
     <h6 (click)="onSelectTab('indetermintree')">Indeterminate Tree</h6>
@@ -75,20 +75,29 @@
     </div>
     <div class="xOTB-actions-btn-content-div">
       <div *ngIf="isDemo" class="xotb-demo">
-        <app-multi-select-value *ngIf="isMultiSelValue" class="xOTB-margin" [selectorOptions]="selectorOptions"
-          (onChange)="onChange($event)" (onChangeSubOption)="onChangeSubOption($event)"
-          (addFormControl)="addFormControl($event)" (deleteControl)="deleteControl($event)">
-        </app-multi-select-value>
-        <app-multi-select-value *ngIf="isMultiSelValue" class="xOTB-margin" [selectorOptions]="selectorOptions1"
-          (onChange)="onChange($event)" (onChangeSubOption)="onChangeSubOption($event)"
-          (addFormControl)="addFormControl($event)" (deleteControl)="deleteControl($event)">
-        </app-multi-select-value>
+        <ng-container *ngIf="isMultiSelValue">
+          <h3 class="h3-comp">Multi Select</h3>
+          <div class="demo-panel">
+              <h3 class="demo-title">Default</h3>
+            <app-multi-select class="xOTB-margin" [selectorOptions]="selectorOptions"
+              (onChange)="onChange($event)" (onChangeSubOption)="onChangeSubOption($event)"
+              (addFormControl)="addFormControl($event)" (deleteControl)="deleteControl($event)">
+            </app-multi-select>
+          </div>
+          <div class="demo-panel">
+              <h3 class="demo-title">Customized</h3>
+            <app-multi-select class="xOTB-margin" [selectorOptions]="selectorOptions1"
+              (onChange)="onChange($event)" (onChangeSubOption)="onChangeSubOption($event)"
+              (addFormControl)="addFormControl($event)" (deleteControl)="deleteControl($event)">
+            </app-multi-select>
+          </div>
+        </ng-container>
+
         <ng-container *ngIf="isAcordionGroup">
-
-
             <div class="instruction">
-              <h2>Sample default demo</h2>
-                <br/>
+              <h3 class="h3-comp">Accordion Group</h3>
+              <div class="demo-panel">
+                <h3 class="demo-title">Default</h3>
                 <app-accordion [openFirst]="openFirst1" (toggle)="onChangeAccordionToggle($event)">
                     <accordion-group [title]="title1" [description]="description1" [icon]="icon1" [open]="open1" [close]="close1">
                         <div class="form-group">
@@ -104,127 +113,140 @@
                             </div>
                             <button type="submit" class="btn btn-default">Submit</button>            
                     </accordion-group>
-                    <accordion-group [title]="title2" [description]="description1" [icon]="icon2" [open]="open2" [close]="close2">
-                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                    <button type="button" class="btn btn-secondary">1</button>
-                                    <button type="button" class="btn btn-secondary">2</button>
-                                    
-                                    <div class="btn-group" role="group">
-                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Dropdown
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                        <a class="dropdown-item" href="#">Dropdown link</a>
-                                        <a class="dropdown-item" href="#">Dropdown link</a>
-                                        </div>
-                                    </div>
-                                    </div>                 
-                    </accordion-group>
                 </app-accordion>
-                <br/>
-                <h2>Sample custom demo</h2>
-                <br/>
+              </div>
+              <div class="demo-panel">
+                <h3 class="demo-title">Customized</h3>
                 <app-accordion [openFirst]="openFirst2" (toggle)="onChangeAccordionToggle($event)">
                     <accordion-group [title]="title3" [description]="description2" [icon]="icon3" [open]="open3" [close]="close3">
-                            <form class="form-horizontal">
-                                    <div class="form-group">
-                                      <label class="control-label col-sm-2" for="email">Email:</label>
-                                      <div class="col-sm-10">
-                                        <p class="form-control-static">someone@example.com</p>
-                                      </div>
-                                    </div>
-                                  </form>  
+                      <app-multi-select class="xOTB-margin" [selectorOptions]="selectorOptions"
+                      (onChange)="onChange($event)" (onChangeSubOption)="onChangeSubOption($event)"
+                      (addFormControl)="addFormControl($event)" (deleteControl)="deleteControl($event)">
+                      </app-multi-select>
                     </accordion-group>
-                    <accordion-group [title]="title4" [description]="description2" [icon]="icon4" [open]="open4" [close]="close4">
-                       <form>
-              <div class="form-group">
-                <label for="inputsm">Small input</label>
-                <input class="form-control input-sm" id="inputsm" type="text">
-              </div>
-               <div class="form-group">
-                <label for="inputdefault">Default input</label>
-                <input class="form-control" id="inputdefault" type="text">
-              </div>
-              <div class="form-group">
-                <label for="inputlg">Large input</label>
-                <input class="form-control input-lg" id="inputlg" type="text">
-              </div>
-            </form>      
-                    </accordion-group>
-                </app-accordion>     
+                </app-accordion>   
+              </div>    
             </div>
-
-
-
-
         </ng-container>
-        <app-modal *ngIf="isModelDialog" class="xOTB-margin" [modalOptions]="modalOptions"
-        (buttonEvent)="onModalButtonClick($event)">
-        </app-modal>
-        <app-pagination *ngIf="isPagination" class="xOTB-margin"></app-pagination>
+        <ng-container *ngIf="isModelDialog">
+          <h3 class="h3-comp">Modal Dialog</h3>
+          <div class="demo-panel">
+            <h3 class="demo-title">Default</h3>
+            <app-modal class="xOTB-margin" [modalOptions]="modalOptions"
+            (buttonEvent)="onModalButtonClick($event)">
+            </app-modal>
+          </div>
+          <div class="demo-panel">
+            <h3 class="demo-title">Customized</h3>
+          <app-modal [buttonTitle]="buttonTitle" [buttonStyle]="buttonStyle" class="xOTB-margin" [modalOptions]="modalOptions1"
+            (buttonEvent)="onModalButtonClick($event)">
+            </app-modal>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="isPagination">
+          <h3 class="h3-comp">Pagination</h3>
+          <div class="demo-panel">
+            <h3 class="demo-title">Default</h3>
+            <app-pagination title="Default Pagination" [pagingData]="pagingData" pageSize="3" 
+            class="xOTB-margin" (onPageChange)="onPageChange($event)"></app-pagination>
+          </div>
+          <div class="demo-panel">
+            <h3 class="demo-title">Customized</h3>
+            <app-pagination title="Custom Pagination " cardHeader="pagination-header" 
+            bodyStyle="pagination-body" pageSize="5" maxPages="10" 
+            [pagingData]="pagingData1" class="xOTB-margin" (onPageChange)="onPageChange($event)"></app-pagination>
+          </div>
+        </ng-container>
 
         <ng-container *ngIf="isSpeedoMeter">
-          <h2>Sample default demo</h2>
-
-          <app-speedo-meter class="xOTB-margin" (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
-
-          <h2>Sample custom demo</h2>
-
-          <app-speedo-meter class="xOTB-margin" [speedoMeterColor]="'red'" [wheelColor]="'green'" [max]="300"
-            (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
-
+          <h3 class="h3-comp">Speedo Meter</h3>
+          <div class="demo-panel">
+            <h3 class="demo-title">Default</h3>
+            <app-speedo-meter class="xOTB-margin" (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
+          </div>
+          <div class="demo-panel">
+            <h3 class="demo-title">Customized</h3>
+            <app-speedo-meter class="xOTB-margin" title="Temperature Rating" labelText="Temperature"  [speedoMeterColor]="'orange'" [wheelColor]="'green'" [max]="300"
+              (selectedValue)="onSpeedMeter($event)"></app-speedo-meter>
+          </div>
         </ng-container>
 
 
         <ng-container *ngIf="isDynamicForm">
-          <h2>Sample default demo</h2>
-
-          <app-dynamic-form (formValue)="onAppDynamicForm($event);" class="xOTB-margin"></app-dynamic-form>
-
-          <h2>Sample custom demo</h2>
-
-          <app-dynamic-form [btnColor]="'green'" (formValue)="onAppDynamicForm($event);" class="xOTB-margin">
-          </app-dynamic-form>
-
+          <h3 class="h3-comp">Dynamic Form</h3>
+          <div class="demo-panel">
+            <h3 class="demo-title">Default</h3>
+            <app-dynamic-form (formValue)="onAppDynamicForm($event);" class="xOTB-margin"></app-dynamic-form>
+          </div>
+          <div class="demo-panel">
+            <h3 class="demo-title">Customized</h3>
+            <app-dynamic-form [btnColor]="'green'" (formValue)="onAppDynamicForm($event);" class="xOTB-margin">
+            </app-dynamic-form>
+          </div>
         </ng-container>
 
         <ng-container *ngIf="isFormCreation">
-          <h2>Sample default demo</h2>
-
-          <app-form-generator [jsonFormData]='formJson' (btnEvent)="onDynamicFormButtonInfor($event)"
+          <h3 class="h3-comp">Form Creation</h3>
+          <div class="demo-panel">
+            <h3 class="demo-title">Default</h3>
+            <app-form-generator formGeneratorName="Registration Form" [jsonFormData]='formJson' (btnEvent)="onDynamicFormButtonInfor($event)"
                       [rowCount]="4">
-          </app-form-generator>
-
-          <h2>Sample custom demo</h2>
-
-          <app-form-generator [jsonFormData]='customFormJson' (btnEvent)="onDynamicFormButtonInfor($event)">
-          </app-form-generator>
-
-
+            </app-form-generator>
+          </div>
+          <div class="demo-panel">
+            <h3 class="demo-title">Customized</h3>
+            <app-form-generator  formGeneratorName="Custom Form" [jsonFormData]='customFormJson' (btnEvent)="onDynamicFormButtonInfor($event)">
+            </app-form-generator>
+          </div>
         </ng-container>
 
 
         <ng-container *ngIf="isImageSlider">
-          <h2>Sample default demo</h2>
-
-          <app-image-slider [imagesData]='imagesData' (currentImage)="onImageSelected($event);">
-          </app-image-slider>
-
-          <h2>Sample custom demo</h2>
-
-          <app-image-slider [imagesData]='imagesData' (currentImage)="onImageSelected($event);" [arrowColor]="'black'"
-            [arrowBgColor]="'grey'" [texColor]="'grey'" [bottomButtonColor]="'grey'"
-            [bottomButtonSelectedColor]="'black'">
-          </app-image-slider>
-
+          <h3 class="h3-comp">Image Slider</h3>
+          <div class="demo-panel">
+            <h3 class="demo-title">Default</h3>
+            <app-image-slider [imagesData]='imagesData' (currentImage)="onImageSelected($event);">
+            </app-image-slider>
+          </div>
+          <div class="demo-panel">
+            <h3 class="demo-title">Customized</h3>
+            <app-image-slider [imagesData]='imagesData' (currentImage)="onImageSelected($event);" [arrowColor]="'black'"
+              [arrowBgColor]="'grey'" [texColor]="'grey'" [bottomButtonColor]="'grey'"
+              [bottomButtonSelectedColor]="'black'">
+            </app-image-slider>
+          </div>
         </ng-container>
 
-        <app-indetermine-tree *ngIf="isIndetermineTree" class="xOTB-margin"></app-indetermine-tree>
+        <ng-container *ngIf="isIndetermineTree">
+          <h3 class="h3-comp">Indeterminate Structure</h3>
+          <div class="demo-panel">
+            <h3 class="demo-title">Default</h3>
+            <app-tree-node title="Folder Structure" [node]="tree" image1="../assets/green.png" image2="../assets/red.png" 
+            getColorCode="red" (onNodeSelected)="handleSelection( $event )" 
+            [selectedNode]="selectedTreeNode"></app-tree-node>
+          </div>
+          <div class="demo-panel">
+            <h3 class="demo-title">Customized</h3>
+            <app-tree-node title="Team Reporting Structure" [node]="tree1" image1="../assets/green1.png" 
+            image2="../assets/red1.png" getColorCode="red" 
+            (onNodeSelected)="handleSelection( $event )" [selectedNode]="selectedTreeNode"></app-tree-node>
+          </div>
+        </ng-container>
 
         <ng-container *ngIf="isContextMenu">
-            <div class="parent">Context Menu Area
+          <h3 class="h3-comp">Context Menu</h3>
+          <div class="demo-panel">
+            <h3 class="demo-title">Default</h3>
+            <div class="context-menu-parent">Default Context Menu
               <app-context-menu [data]=data (optionClick)="contextMenuEvent($event)" (closed)="contextMenuEvent($event)"></app-context-menu>
             </div>
+          </div>
+          <div class="demo-panel">
+            <h3 class="demo-title">Customized</h3>
+            <div class="context-menu-parent1">Custom Context Menu
+              <app-context-menu [data]=data1 (optionClick)="contextMenuEvent($event)" (closed)="contextMenuEvent($event)"></app-context-menu>
+            </div>
+          </div>
         </ng-container>
        
       </div>

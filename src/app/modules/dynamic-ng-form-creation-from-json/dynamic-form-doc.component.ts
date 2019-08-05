@@ -17,12 +17,12 @@ export class DynamicFormDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "jsonFormData", datatype: 'Object', default: "undefined", description: 'json object with element names and properties'},
-    {attribute: "rowCount", datatype: 'number', default: "1", description: 'It will tell the how many elements to inserted in a row.'}
+    {attribute: "jsonFormData", datatype: 'Object', default: "undefined", description: 'JSON object with element names and properties'},
+    {attribute: "formGeneratorName", datatype: 'string', default: "", description: 'Form title'}
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "btnEvent", eventType: 'object', description: 'returns button name , value and updated jsonFrom Data'},
+    {methodName: "btnEvent", eventType: 'object', description: 'Returns button name , value and updated jsonFrom Data'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -43,16 +43,8 @@ export class DynamicFormDocComponent implements OnInit {
     `;
 
     this.example = `
-    Sample default example
-
-    <app-form-generator [jsonFormData]='formJson' (btnEvent)="onDynamicFormButtonInfor($event)"
-                        [rowCount]="4">
-    </app-form-generator>
-
-    Sample attribute example
-
-    <app-form-generator [jsonFormData]='customFormJson' (btnEvent)="onDynamicFormButtonInfor($event)">
-    </app-form-generator>
+      <app-form-generator  formGeneratorName="Custom Form" [jsonFormData]='customFormJson' (btnEvent)="onDynamicFormButtonInfor($event)">
+      </app-form-generator>
     `;
 
     this.form_json = `

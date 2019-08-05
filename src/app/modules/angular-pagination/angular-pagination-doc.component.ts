@@ -16,15 +16,16 @@ export class PaginationDocComponent implements OnInit {
   public outputDisplayedColumns:any = ['MethodName', 'EventType', 'Description'];
 
   private input_element_data: IinputElement[] = [
-    {attribute: "items", datatype: 'object', default: "", description: 'Provides the total no of items.'},
+    {attribute: "pagingData", datatype: 'object', default: "", description: 'Provides the total no of items.'},
     {attribute: "pageSize", datatype: 'Number', default: "10", description: 'Change page size.'},
-    {attribute: "maxPages", datatype: 'Number', default: "8", description: 'Change the number of page to be displayed.'},
-    {attribute: "setFontColor", datatype: 'String', default: "#337ab", description: 'Set the font color.'},
-    
+    {attribute: "maxPages", datatype: 'Number', default: "20", description: 'Change the number of page to be displayed.'},
+    {attribute: "title", datatype: 'String', default: "", description: 'Pagination Card title.'},
+    {attribute: "cardHeader", datatype: 'String', default: "", description: 'Card header style class'},
+    {attribute: "bodyStyle", datatype: 'String', default: "", description: 'Page style class'}
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "changePage", eventType: 'event', description: 'Triggered on page change'},
+    {methodName: "onPageChange", eventType: 'event', description: 'Triggered on page change'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -46,14 +47,9 @@ export class PaginationDocComponent implements OnInit {
     `;
     
     this.example = `
-    Sample default example
-
-    <app-pagination-comp  class="xOTB-margin" (changePage)="onChangePage($event)"></app-pagination-comp>
-
-    Sample attribute example
-    
-    <app-pagination-comp class="xOTB-margin"  setFontColor="#337ab" [items]="results" [pageSize]="10" [maxPages]="8" 
-    (changePage)="onChangePage($event)"> </app-pagination-comp>
+    <app-pagination title="Custom Pagination " cardHeader="pagination-header" 
+      bodyStyle="pagination-body" pageSize="5" maxPages="10" 
+      [pagingData]="pagingData1" class="xOTB-margin" (onPageChange)="onPageChange($event)"></app-pagination>
     `;
   }
 }

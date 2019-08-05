@@ -19,7 +19,7 @@ export class AngularDynamicDocComponent implements OnInit {
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "formValue", eventType: 'object', description: 'return the updated Data,triggered on input change and button click'},
+    {methodName: "formValue", eventType: 'object', description: 'Return the updated Data,triggered on input change and button click'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);

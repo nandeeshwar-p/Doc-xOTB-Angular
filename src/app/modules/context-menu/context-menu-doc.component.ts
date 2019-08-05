@@ -19,8 +19,8 @@ export class ContextMenuDocComponent implements OnInit {
     ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "optionClick", eventType: 'event', description: 'callback on context menu option click'},
-  {methodName: "closed", eventType: 'event', description: 'triggered on context menu closure'},
+    {methodName: "optionClick", eventType: 'event', description: 'Callback on context menu option click'},
+  {methodName: "closed", eventType: 'event', description: 'Triggered on context menu closure'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
@@ -43,13 +43,9 @@ export class ContextMenuDocComponent implements OnInit {
     `;
 
     this.example = `
-    Sample default example
-
-    <app-context-menu class="xOTB-margin" (optionClick)="click($event)" (closed)="click($event)"></app-context-menu>
-   
-    Sample attribute example
-
-    <app-context-menu class="xOTB-margin" [data]=data (optionClick)="click($event)" (closed)="click($event)"></app-context-menu>
+    <div class="parent">Sample Context Menu
+      <app-context-menu [data]=data1 (optionClick)="contextMenuEvent($event)" (closed)="contextMenuEvent($event)"></app-context-menu>
+    </div>
     
     `;
   }

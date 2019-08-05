@@ -19,10 +19,10 @@ export class MultiSelcttDocComponent implements OnInit {
   ];
 
   private output_element_data: IoutputElement[] = [
-    {methodName: "onChange", eventType: 'Object', description: 'triggered on parent dropdown value change'},
-    {methodName: "onChangeSubOption", eventType: 'Object', description: 'triggered on child dropdown value change'},
-    {methodName: "addFormControl", eventType: 'Object', description: 'triggered on button click to add new dropdown'},
-    {methodName: "deleteControl", eventType: 'Object', description: 'triggered on button click to delete dropdown button'},
+    {methodName: "onChange", eventType: 'Object', description: 'Triggered on parent dropdown value change'},
+    {methodName: "onChangeSubOption", eventType: 'Object', description: 'Triggered on child dropdown value change'},
+    {methodName: "addFormControl", eventType: 'Object', description: 'Triggered on button click to add new dropdown'},
+    {methodName: "deleteControl", eventType: 'Object', description: 'Triggered on button click to delete dropdown button'},
   ];
 
   public input_dataSource = new MatTableDataSource<IinputElement>(this.input_element_data);
