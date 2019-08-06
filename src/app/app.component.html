@@ -100,18 +100,22 @@
                 <h3 class="demo-title">Default</h3>
                 <app-accordion [openFirst]="openFirst1" (toggle)="onChangeAccordionToggle($event)">
                     <accordion-group [title]="title1" [description]="description1" [icon]="icon1" [open]="open1" [close]="close1">
-                        <div class="form-group">
-                            <label for="email">Email:</label>
+                      <div class="form-group-div">
+                        <div class="form-group form-div">
+                          <div class="form-group-child">
+                            <label for="email">Email</label>
+                            <label for="pwd">Password</label>
+                          </div>
+                          <div class="form-group-child"> 
                             <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                            </div>
-                            <div class="form-group">
-                            <label for="pwd">Password:</label>
                             <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-                            </div>
-                            <div class="checkbox">
-                            <label><input type="checkbox" name="remember"> Remember me</label>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>            
+                          </div>
+                        </div>
+                        <div class="button-div">
+                          <input type="checkbox" name="remember"><span>Remember me</span>
+                          <button type="submit" class="btn btn-default">Submit</button>  
+                        </div> 
+                      </div>         
                     </accordion-group>
                 </app-accordion>
               </div>

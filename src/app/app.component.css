@@ -206,6 +206,42 @@ form{
   color:white;
 }
 
+.form-div, .button-div{
+  display: flex;
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  width: fit-content;
+}
+.button-div{
+  padding-top:0.75em;
+}
+.form-group-child{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-content: flex-start;
+}
+.form-group-child label, .form-group-child input{
+  margin: 0.25em;
+}
+.button-div button{
+  margin: 0.25em;
+}
+.button-div span{
+  margin-right: 0.25em;
+}
+.form-group-div{
+  width: fit-content;
+  /* align-items: center; */
+  margin: auto;
+  padding: 1em;
+  border-radius: 5pt;
+  border:1px solid black;
+}
 :host /deep/ .modal-body {
   max-height:50vh !important;
   min-height: 25vh !important;
