@@ -41,7 +41,7 @@ export class AccordionDocComponent implements OnInit {
     `;
 
     this.moduleImport = `
-    import { AccordionGroup } from 'edge-xotb-ng';
+    import { AccordionGroup } from 'ng-xotb';
     `;
 
     this.example = `

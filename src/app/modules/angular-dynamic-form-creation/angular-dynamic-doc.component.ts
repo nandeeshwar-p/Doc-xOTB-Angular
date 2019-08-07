@@ -36,7 +36,7 @@ export class AngularDynamicDocComponent implements OnInit {
     `;
 
     this.moduleImport = `
-    import { DynamicFormCreation } from 'edge-xotb-ng';
+    import { DynamicFormCreation } from 'ng-xotb';
     `;
     
     this.example = `

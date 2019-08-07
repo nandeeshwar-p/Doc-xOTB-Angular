@@ -6,16 +6,16 @@ import { AppComponent, TempComp } from './app.component';
 import { HeaderEDGEComponent } from './header-edge/header-edge.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MultiSelect } from 'edge-xotb-ng';
-import { AccordionGroup } from 'edge-xotb-ng';
-import { ModalWindow } from 'edge-xotb-ng';
-import { Pagination } from 'edge-xotb-ng';
-import { Speedometer } from 'edge-xotb-ng';
-import { DynamicFormCreation } from 'edge-xotb-ng';
-import { DynamicFormCreationFromJSON } from 'edge-xotb-ng';
-import { ImageSlider } from 'edge-xotb-ng';
-import { IndeterminateTreeStructure } from 'edge-xotb-ng';
-import { ContextMenu } from 'edge-xotb-ng';
+import { MultiSelect } from 'ng-xotb';
+import { AccordionGroup } from 'ng-xotb';
+import { ModalWindow } from 'ng-xotb';
+import { Pagination } from 'ng-xotb';
+import { Speedometer } from 'ng-xotb';
+import { DynamicFormCreation } from 'ng-xotb';
+import { DynamicFormCreationFromJSON } from 'ng-xotb';
+import { ImageSlider } from 'ng-xotb';
+import { IndeterminateTreeStructure } from 'ng-xotb';
+import { ContextMenu } from 'ng-xotb';
 import { DemoMaterialModule } from './demo.material.module';
 
 /*documentation related components*/

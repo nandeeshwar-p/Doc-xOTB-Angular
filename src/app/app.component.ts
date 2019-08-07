@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {ISelectorOptions} from 'edge-xotb-ng';
-import {IModalOptions} from 'edge-xotb-ng';
-import {TreeNode} from 'edge-xotb-ng';
+import {ISelectorOptions} from 'ng-xotb';
+import {IModalOptions} from 'ng-xotb';
+import {TreeNode} from 'ng-xotb';
 
 @Component({
   template: `

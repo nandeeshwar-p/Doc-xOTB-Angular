@@ -39,7 +39,7 @@ export class ContextMenuDocComponent implements OnInit {
     `;
 
     this.moduleImport = `
-      import { ContextMenu } from 'edge-xotb-ng';
+      import { ContextMenu } from 'ng-xotb';
     `;
 
     this.example = `

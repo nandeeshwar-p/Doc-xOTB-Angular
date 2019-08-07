@@ -39,7 +39,7 @@ export class SpeedometerDocComponent implements OnInit {
     Component which renders a speedmeter. The values on the meter changes based in the input value. It has options to customize the look and feel, set max. value,etc.
     `;
     this.moduleImport = `
-      import { Speedometer } from 'edge-xotb-ng';
+      import { Speedometer } from 'ng-xotb';
     `;
     this.example = `
       <app-speedo-meter class="xOTB-margin" title="Sample Rating" labelText="Temperature"  

@@ -54,7 +54,7 @@ export class MultiSelcttDocComponent implements OnInit {
     Example: The dropdown can be used in cases like selecting category and sub-category 
     `;
     this.moduleImport = `
-      import { MultiSelect } from 'edge-xotb-ng';
+      import { MultiSelect } from 'ng-xotb';
     `;
 
     this.example = `

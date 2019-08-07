@@ -1,5 +1,5 @@
 # Doc-xOTB-Angular-Doc
-This is an application to showcase/demo the components that are part of the "edge-xotb-ng" library.
+This is an application to showcase/demo the components that are part of the "ng-xotb" library.
 https://github.com/ERS-HCL/xOTB-Angular
 
 ## Development server

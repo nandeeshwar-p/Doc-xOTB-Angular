@@ -39,7 +39,7 @@ export class DynamicFormDocComponent implements OnInit {
     `;
 
     this.moduleImport = `
-      import { DynamicFormCreationFromJSON } from 'edge-xotb-ng';
+      import { DynamicFormCreationFromJSON } from 'ng-xotb';
     `;
 
     this.example = `

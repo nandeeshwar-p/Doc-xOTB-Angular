@@ -43,7 +43,7 @@ export class ImageSliderDocComponent implements OnInit {
     `;
 
     this.moduleImport = `
-      import { ImageSlider } from 'edge-xotb-ng';
+      import { ImageSlider } from 'ng-xotb';
     `;
 
     this.example = `

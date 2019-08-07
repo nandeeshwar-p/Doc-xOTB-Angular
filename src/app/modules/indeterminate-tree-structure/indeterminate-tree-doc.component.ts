@@ -52,7 +52,7 @@ export class IndetreeDocComponent implements OnInit {
     `;
 
     this.moduleImport = `
-      import { IndeterminateTreeStructure } from 'edge-xotb-ng';
+      import { IndeterminateTreeStructure } from 'ng-xotb';
     `;
 
     this.example = `

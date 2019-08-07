@@ -43,7 +43,7 @@ export class PaginationDocComponent implements OnInit {
     `;
 
     this.moduleImport = `
-    import { Pagination } from 'edge-xotb-ng';
+    import { Pagination } from 'ng-xotb';
     `;
     
     this.example = `

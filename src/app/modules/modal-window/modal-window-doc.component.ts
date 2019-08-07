@@ -53,7 +53,7 @@ export class ModalWindowDocComponent implements OnInit {
     Modal(Pop-up) window to display the content, as and when required. It can display modal windows till three levels. Provides options to customize the look and feel. 
     `;
     this.moduleImport = `
-      import { ModalWindow } from 'edge-xotb-ng';
+      import { ModalWindow } from 'ng-xotb';
     `;
 
     this.example = `
